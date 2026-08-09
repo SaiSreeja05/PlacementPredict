@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h2>Load Data</h2>
+
+    <p>
+        Dataset information and preview
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <h2>Dataset Information</h2>
+
+    <div class="info-grid">
+
+        <div class="info-item">
+            <span>Dataset</span>
+            <strong>{{ dataset_name }}</strong>
+        </div>
+
+        <div class="info-item">
+            <span>Rows</span>
+            <strong>{{ rows }}</strong>
+        </div>
+
+        <div class="info-item">
+            <span>Columns</span>
+            <strong>{{ columns }}</strong>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>Dataset Preview</h2>
+
+    <div class="table-container">
+
+        {{ preview | safe }}
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>Available Columns</h2>
+
+    <div class="columns">
+
+        {% for column in column_names %}
+
+        <span class="column">
+            {{ column }}
+        </span>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

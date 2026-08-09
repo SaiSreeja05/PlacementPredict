@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h2>Feature Engineering</h2>
+
+    <p>
+        Feature preparation for placement prediction
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <h2>Feature Engineering Pipeline</h2>
+
+    <div class="pipeline">
+
+        <div class="pipeline-step">
+            <span>01</span>
+            <h3>Data Cleaning</h3>
+            <p>
+                Identify and handle missing values.
+            </p>
+        </div>
+
+
+        <div class="pipeline-arrow">
+            →
+        </div>
+
+
+        <div class="pipeline-step">
+            <span>02</span>
+            <h3>Feature Selection</h3>
+            <p>
+                Select useful academic,
+                skill and placement-related features.
+            </p>
+        </div>
+
+
+        <div class="pipeline-arrow">
+            →
+        </div>
+
+
+        <div class="pipeline-step">
+            <span>03</span>
+            <h3>Categorical Encoding</h3>
+            <p>
+                Convert categorical variables
+                into machine-readable values.
+            </p>
+        </div>
+
+
+        <div class="pipeline-arrow">
+            →
+        </div>
+
+
+        <div class="pipeline-step">
+            <span>04</span>
+            <h3>Final Features</h3>
+            <p>
+                Prepare the dataset for
+                machine-learning models.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="dashboard-grid">
+
+    <div class="card">
+
+        <h2>Numerical Features</h2>
+
+        <div class="columns">
+
+            {% for column in numeric_columns %}
+
+            <span class="column">
+                {{ column }}
+            </span>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Categorical Features</h2>
+
+        <div class="columns">
+
+            {% for column in categorical_columns %}
+
+            <span class="column">
+                {{ column }}
+            </span>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>Feature Summary</h2>
+
+    <div class="info-grid">
+
+        <div class="info-item">
+
+            <span>Original Features</span>
+
+            <strong>
+                {{ total_features }}
+            </strong>
+
+        </div>
+
+        <div class="info-item">
+
+            <span>Numerical Features</span>
+
+            <strong>
+                {{ numeric_columns | length }}
+            </strong>
+
+        </div>
+
+        <div class="info-item">
+
+            <span>Categorical Features</span>
+
+            <strong>
+                {{ categorical_columns | length }}
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

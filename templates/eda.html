@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h2>EDA Analysis</h2>
+
+    <p>
+        Exploratory Data Analysis visualizations
+    </p>
+
+</div>
+
+
+<div class="plot-grid">
+
+    {% for plot in plots %}
+
+    <div class="plot-card">
+
+        <div class="plot-header">
+
+            <h3>
+                {{ plot.title }}
+            </h3>
+
+        </div>
+
+        <div class="plot-container">
+
+            <img
+                src="{{ url_for('plot_file', filename=plot.file) }}"
+                alt="{{ plot.title }}"
+            >
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

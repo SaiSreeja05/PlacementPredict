@@ -1,0 +1,58 @@
+PLACEMENT DATASET EDA REPORT
+==================================================
+
+Dataset Shape: (50000, 32)
+
+Missing Values:
+StudentID                0
+Gender                   0
+City                     0
+CollegeTier              0
+Stream                   0
+Specialisation           0
+Hostel                   0
+HistoryOfBacklogs        0
+SGPA_Sem1                0
+SGPA_Sem2                0
+SGPA_Sem3                0
+SGPA_Sem4                0
+SGPA_Sem5                0
+SGPA_Sem6                0
+SGPA_Sem7                0
+SGPA_Sem8                0
+CGPA                     0
+AttendancePercent        0
+Internships              0
+Projects                 0
+Workshops             4488
+Certifications           0
+Publications             0
+AptitudeTestScore     4029
+SoftSkillsRating      3526
+CodingTestScore       2976
+MockInterviewScore    4957
+ExtraCurricular          0
+CGPA_Tier                0
+PlacementStatus          0
+IsAnomaly                0
+Salary Package           0
+dtype: int64
+
+Duplicate Rows:
+0
+
+Statistical Summary:
+          StudentID     SGPA_Sem1  ...     IsAnomaly  Salary Package
+count  50000.000000  50000.000000  ...  50000.000000    50000.000000
+mean   25000.500000      7.210583  ...      0.035000        9.536119
+std    14433.901067      1.517846  ...      0.183782        8.824561
+min        1.000000      4.000000  ...      0.000000        0.000000
+25%    12500.750000      6.090000  ...      0.000000        0.000000
+50%    25000.500000      7.190000  ...      0.000000        8.430000
+75%    37500.250000      8.340000  ...      0.000000       18.410000
+max    50000.000000     10.000000  ...      1.000000       26.000000
+
+[8 rows x 24 columns]
+
+CGPA Skewness: -0.06515076297794471
+CGPA Kurtosis: -0.8812326478636763

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Placement Prediction Analytics
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🎓
+            <span>Placement<br>Analytics</span>
+        </div>
+
+        <nav>
+
+            <a href="{{ url_for('index') }}"
+               class="menu-btn">
+                🏠 Dashboard
+            </a>
+
+            <a href="{{ url_for('load_page') }}"
+               class="menu-btn">
+                📂 Load Data
+            </a>
+
+            <a href="{{ url_for('eda_page') }}"
+               class="menu-btn">
+                📊 EDA Analysis
+            </a>
+
+            <a href="{{ url_for('feature_engg_page') }}"
+               class="menu-btn">
+                ⚙️ Feature Engineering
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main area -->
+
+    <div class="main-area">
+
+        <header class="header">
+
+            <div>
+                <h1>
+                    Student Placement Prediction
+                </h1>
+
+                <p>
+                    Data Analysis & Visualization Dashboard
+                </p>
+            </div>
+
+        </header>
+
+
+        <main class="content">
+
+            {% block content %}
+            {% endblock %}
+
+        </main>
+
+
+        <footer class="footer">
+
+            Placement Prediction Analytics
+
+        </footer>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

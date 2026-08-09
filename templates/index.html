@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h2>Dashboard</h2>
+
+    <p>
+        Overview of the student placement dataset
+    </p>
+
+</div>
+
+
+<!-- KPI Cards -->
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            👨‍🎓
+        </div>
+
+        <div>
+            <p>Total Students</p>
+            <h2>{{ rows }}</h2>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            📊
+        </div>
+
+        <div>
+            <p>Total Features</p>
+            <h2>{{ columns }}</h2>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            ✅
+        </div>
+
+        <div>
+            <p>Placed Students</p>
+            <h2>{{ placed_students }}</h2>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            📈
+        </div>
+
+        <div>
+            <p>Placement Rate</p>
+            <h2>{{ placement_rate }}%</h2>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Additional information -->
+
+<div class="dashboard-grid">
+
+    <div class="card">
+
+        <h2>Academic Overview</h2>
+
+        <div class="mini-stats">
+
+            <div>
+                <span>Average CGPA</span>
+                <strong>{{ average_cgpa }}</strong>
+            </div>
+
+            <div>
+                <span>Average Attendance</span>
+                <strong>{{ average_attendance }}%</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Placement Overview</h2>
+
+        <div class="mini-stats">
+
+            <div>
+                <span>Placed</span>
+                <strong>{{ placed_students }}</strong>
+            </div>
+
+            <div>
+                <span>Not Placed</span>
+                <strong>{{ not_placed_students }}</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Dataset quality -->
+
+<div class="card">
+
+    <h2>Dataset Quality</h2>
+
+    <div class="quality-grid">
+
+        <div class="quality-item">
+
+            <span>Missing Values</span>
+
+            <strong>
+                {{ missing_values }}
+            </strong>
+
+        </div>
+
+
+        <div class="quality-item">
+
+            <span>Duplicate Rows</span>
+
+            <strong>
+                {{ duplicate_rows }}
+            </strong>
+
+        </div>
+
+
+        <div class="quality-item">
+
+            <span>Rows</span>
+
+            <strong>
+                {{ rows }}
+            </strong>
+
+        </div>
+
+
+        <div class="quality-item">
+
+            <span>Columns</span>
+
+            <strong>
+                {{ columns }}
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Dataset columns -->
+
+<div class="card">
+
+    <h2>Dataset Features</h2>
+
+    <div class="columns">
+
+        {% for column in column_names %}
+
+        <span class="column">
+            {{ column }}
+        </span>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
