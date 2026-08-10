@@ -1,38 +1,19 @@
 from flask import Flask, render_template, send_from_directory
 import os
 import pandas as pd
-
 app = Flask(__name__)
-
-# --------------------------------------------------
-# Project paths
-# --------------------------------------------------
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 DATA_PATH = os.path.join(
     BASE_DIR,
     "Data",
     "placement_predict_50k Dataset (2).csv"
 )
-
 PLOT_PATH = os.path.join(
     BASE_DIR,
     "Output",
     "plot"
 )
-
-# --------------------------------------------------
-# Load dataset
-# --------------------------------------------------
-
 df = pd.read_csv(DATA_PATH)
-
-
-# --------------------------------------------------
-# Home / Dashboard
-# --------------------------------------------------
-
 @app.route("/")
 def index():
 
@@ -83,11 +64,6 @@ def index():
         average_attendance=average_attendance
     )
 
-
-# --------------------------------------------------
-# Load Data Page
-# --------------------------------------------------
-
 @app.route("/load")
 def load_page():
 
@@ -105,11 +81,6 @@ def load_page():
         preview=preview,
         column_names=df.columns.tolist()
     )
-
-
-# --------------------------------------------------
-# EDA Page
-# --------------------------------------------------
 
 @app.route("/eda")
 def eda_page():
@@ -146,11 +117,6 @@ def eda_page():
         plots=plots
     )
 
-
-# --------------------------------------------------
-# Serve plot images from Output/plot
-# --------------------------------------------------
-
 @app.route("/plots/<filename>")
 def plot_file(filename):
 
@@ -158,11 +124,6 @@ def plot_file(filename):
         PLOT_PATH,
         filename
     )
-
-
-# --------------------------------------------------
-# Feature Engineering Page
-# --------------------------------------------------
 
 @app.route("/feature-engg")
 def feature_engg_page():
@@ -181,11 +142,5 @@ def feature_engg_page():
         categorical_columns=categorical_columns,
         total_features=len(df.columns)
     )
-
-
-# --------------------------------------------------
-# Run application
-# --------------------------------------------------
-
 if __name__ == "__main__":
     app.run(debug=True)
