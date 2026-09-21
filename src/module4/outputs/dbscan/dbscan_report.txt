@@ -1,0 +1,32 @@
+DBSCAN CLUSTERING REPORT
+========================
+
+Dataset: C:\Users\psais\PycharmProjects\PlacementPrediction\Data\placement_predict_50k Dataset (2).csv
+Full dataset rows: 50,000
+DBSCAN sample rows: 5,000
+Number of features: 20
+
+min_samples: 40
+eps: 2.86
+
+Clusters found: 1
+Core points: 4,621
+Noise points: 127
+Noise percentage: 2.54%
+
+Cluster sizes:
+-1     127
+ 0    4873
+
+ANOMALY COMPARISON
+Both noise and anomalous: 118
+DBSCAN noise that is anomalous: 92.9%
+Anomalies detected as noise: 63.4%
+
+EPS SENSITIVITY
+eps=1.43: 1 clusters, 4,941 noise points
+eps=2.86: 1 clusters, 127 noise points
+eps=5.72: 1 clusters, 0 noise points
+
+Placement rate - clustered: 65.4%
+Placement rate - noise: 63.8%

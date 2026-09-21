@@ -1,0 +1,76 @@
+PCA ANALYSIS REPORT
+===================
+
+Original dataset shape: (50000, 32)
+Number of PCA features: 20
+
+Features used:
+- SGPA_Sem1
+- SGPA_Sem2
+- SGPA_Sem3
+- SGPA_Sem4
+- SGPA_Sem5
+- SGPA_Sem6
+- SGPA_Sem7
+- SGPA_Sem8
+- CGPA
+- AttendancePercent
+- Internships
+- Projects
+- Workshops
+- Certifications
+- Publications
+- AptitudeTestScore
+- SoftSkillsRating
+- CodingTestScore
+- MockInterviewScore
+- ExtraCurricular
+
+Explained Variance:
+PC1: 64.2476%
+PC2: 11.8536%
+PC3: 4.4488%
+PC4: 3.2654%
+PC5: 2.6793%
+PC6: 2.3928%
+PC7: 2.0206%
+PC8: 1.8379%
+PC9: 1.7176%
+PC10: 1.5562%
+PC11: 1.3383%
+PC12: 1.1497%
+PC13: 0.3159%
+PC14: 0.1842%
+PC15: 0.1773%
+PC16: 0.1723%
+PC17: 0.1682%
+PC18: 0.1629%
+PC19: 0.1580%
+PC20: 0.1532%
+
+Cumulative Variance:
+PC1: 64.2476%
+PC2: 76.1013%
+PC3: 80.5501%
+PC4: 83.8155%
+PC5: 86.4947%
+PC6: 88.8876%
+PC7: 90.9082%
+PC8: 92.7461%
+PC9: 94.4637%
+PC10: 96.0199%
+PC11: 97.3582%
+PC12: 98.5079%
+PC13: 98.8239%
+PC14: 99.0081%
+PC15: 99.1854%
+PC16: 99.3577%
+PC17: 99.5259%
+PC18: 99.6888%
+PC19: 99.8468%
+PC20: 100.0000%
+
+Component Requirements:
+80% variance: 3 components
+90% variance: 7 components
+95% variance: 10 components

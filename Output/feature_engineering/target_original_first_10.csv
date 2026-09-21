@@ -1,0 +1,11 @@
+Gender,City,Stream,Specialisation,PlacementStatus
+Male,Ahmedabad,ECE,Networking,0
+Female,Mumbai,ECE,DataScience,0
+Male,Kolkata,IT,DataScience,1
+Male,Jaipur,CS,AI,1
+Male,Pune,IT,DataScience,1
+Male,Ahmedabad,EE,Networking,1
+Male,Hyderabad,Mechanical,Networking,1
+Male,Delhi,Mechanical,Embedded,0
+Male,Pune,CS,AI,1
+Female,Hyderabad,CS,DataScience,1

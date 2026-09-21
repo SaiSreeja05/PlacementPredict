@@ -10,12 +10,11 @@ data = {
     "Internship": [1, 0, 2, 0, 1, 0, 2, 0],
     "Placement": [1, 0, 1, 0, 1, 0, 1, 0]
 }
-df = pd.DataFrame(data)
+df = pd.DataFrame(data)  
 print("\n==============================")
 print("        DATASET")
 print("==============================")
 print(df)
-
 # Features (input variables)
 X = df[["CGPA", "AptitudeScore", "Internship"]]
 
@@ -58,11 +57,21 @@ print(X_test)
 print("\nTesting target:")
 print(y_test)
 
+
+# =========================================================
+# 4. CREATE DECISION TREE CLASSIFIER
+# =========================================================
+
 model = DecisionTreeClassifier(
     criterion="gini",
     max_depth=3,
     random_state=42
 )
+
+
+# =========================================================
+# 5. TRAIN THE DECISION TREE
+# =========================================================
 
 model.fit(X_train, y_train)
 
@@ -70,14 +79,25 @@ print("\n==============================")
 print("    DECISION TREE TRAINED")
 print("==============================")
 
+
+# =========================================================
+# 6. MAKE PREDICTIONS
+# =========================================================
+
 y_train_pred = model.predict(X_train)
 y_test_pred = model.predict(X_test)
+
 
 print("\nTraining predictions:")
 print(y_train_pred)
 
 print("\nTesting predictions:")
 print(y_test_pred)
+
+
+# =========================================================
+# 7. CALCULATE ACCURACY
+# =========================================================
 
 train_accuracy = accuracy_score(y_train, y_train_pred)
 test_accuracy = accuracy_score(y_test, y_test_pred)
@@ -89,12 +109,22 @@ print("==============================")
 print("Training Accuracy:", round(train_accuracy, 4))
 print("Testing Accuracy :", round(test_accuracy, 4))
 
+
+# =========================================================
+# 8. DISPLAY TREE INFORMATION
+# =========================================================
+
 print("\n==============================")
 print("       TREE INFORMATION")
 print("==============================")
 
 print("Tree Depth:", model.get_depth())
 print("Number of Leaves:", model.get_n_leaves())
+
+
+# =========================================================
+# 9. FEATURE IMPORTANCE
+# =========================================================
 
 importance = pd.Series(
     model.feature_importances_,
@@ -109,6 +139,11 @@ print("==============================")
 
 for feature, value in importance.items():
     print(f"{feature}: {value:.4f}")
+
+
+# =========================================================
+# 10. PLOT THE DECISION TREE
+# =========================================================
 
 plt.figure(figsize=(14, 8))
 
@@ -133,6 +168,11 @@ plt.savefig(
 
 plt.show()
 
+
+# =========================================================
+# 11. PLOT FEATURE IMPORTANCE
+# =========================================================
+
 plt.figure(figsize=(8, 5))
 
 importance.sort_values().plot(
@@ -152,6 +192,11 @@ plt.savefig(
 )
 
 plt.show()
+
+
+# =========================================================
+# 12. PREDICT A NEW STUDENT
+# =========================================================
 
 # New student's information:
 #
@@ -179,6 +224,11 @@ if prediction[0] == 1:
 else:
     print("Result: Not Placed")
 
+
+# =========================================================
+# 13. PREDICTION PROBABILITY
+# =========================================================
+
 probability = model.predict_proba(new_student)
 
 print("\n==============================")
@@ -188,6 +238,11 @@ print("==============================")
 print("Not Placed:", round(probability[0][0], 4))
 print("Placed    :", round(probability[0][1], 4))
 
+
+# =========================================================
+# 14. FINAL SUMMARY
+# =========================================================
+
 print("\n==============================")
 print("       FINAL SUMMARY")
 print("==============================")
@@ -196,7 +251,10 @@ print("Training Accuracy :", round(train_accuracy, 4))
 print("Testing Accuracy  :", round(test_accuracy, 4))
 print("Tree Depth         :", model.get_depth())
 print("Number of Leaves   :", model.get_n_leaves())
+
 print("\nMost Important Features:")
+
 for feature, value in importance.items():
     print(f"  {feature:<20} {value:.4f}")
-print("\nDecision Tree implementation completed successfully.")
+
+print("\nDecision Tree implementation completed successfgully.")
