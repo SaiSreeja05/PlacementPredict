@@ -1,0 +1,332 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    background: #f4f6f8;
+
+    color: #222;
+}
+
+
+header {
+
+    background: #172033;
+
+    color: white;
+
+    padding: 18px 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin-left: 25px;
+
+    font-weight: bold;
+}
+
+
+main {
+
+    width: 92%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 30px 0;
+}
+
+
+.hero {
+
+    background: white;
+
+    padding: 45px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    margin-bottom: 30px;
+}
+
+
+.hero h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+
+.hero p {
+
+    font-size: 18px;
+
+    color: #666;
+}
+
+
+.button {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 22px;
+
+    background: #172033;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+}
+
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+
+.card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+.card h3 {
+
+    margin-top: 0;
+
+    color: #555;
+}
+
+
+.card p {
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 0;
+}
+
+
+.info {
+
+    background: white;
+
+    padding: 25px;
+
+    margin: 25px 0;
+
+    border-radius: 10px;
+}
+
+
+.page-title {
+
+    margin-bottom: 30px;
+}
+
+
+section {
+
+    margin-bottom: 45px;
+}
+
+
+h2 {
+
+    border-bottom: 2px solid #172033;
+
+    padding-bottom: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+h3 {
+
+    margin-top: 25px;
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    margin-bottom: 25px;
+}
+
+
+th,
+td {
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    text-align: left;
+}
+
+
+th {
+
+    background: #172033;
+
+    color: white;
+}
+
+
+tr:nth-child(even) {
+
+    background: #f8f8f8;
+}
+
+
+.explanation {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    line-height: 1.7;
+}
+
+
+.formula {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+.plot-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(450px, 1fr));
+
+    gap: 25px;
+}
+
+
+.plot-card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+.plot-card h3 {
+
+    margin-top: 0;
+}
+
+
+.plot-card img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    border-radius: 5px;
+}
+
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    background: #172033;
+
+    color: white;
+
+    margin-top: 40px;
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .plot-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    main {
+
+        width: 95%;
+    }
+}
