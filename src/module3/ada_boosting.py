@@ -23,7 +23,12 @@ from sklearn.metrics import (
 # ============================================================
 
 DATA_PATH = r"C:C:\Users\psais\PycharmProjects\PlacementPrediction\Data\placement_predict_50k Dataset (2).csv"
-OUTPUT_DIR = "outputs"
+OUTPUT_DIR = os.path.join(
+    os.path.dirname(
+        os.path.abspath(__file__)
+    ),
+    "outputs"
+)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 RANDOM_STATE = 42

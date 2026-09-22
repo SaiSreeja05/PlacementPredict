@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+    <h1>
+        Student Placement Prediction
+    </h1>
+
+    <p>
+        Machine Learning Analysis Dashboard
+    </p>
+
+    <a class="button"
+       href="{{ url_for('session') }}">
+        View Complete Analysis
+    </a>
+
+</section>
+
+
+<section class="cards">
+
+    <div class="card">
+
+        <h3>Total Students</h3>
+
+        <p>
+            {{ "{:,}".format(total_students) }}
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Placed Students</h3>
+
+        <p>
+            {{ "{:,}".format(placed) }}
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Not Placed</h3>
+
+        <p>
+            {{ "{:,}".format(not_placed) }}
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Placement Rate</h3>
+
+        <p>
+            {{ placement_rate }}%
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Average CGPA</h3>
+
+        <p>
+            {{ average_cgpa }}
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Average Attendance</h3>
+
+        <p>
+            {{ average_attendance }}%
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Dataset Columns</h3>
+
+        <p>
+            {{ columns }}
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Missing Values</h3>
+
+        <p>
+            {{ "{:,}".format(missing_values) }}
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="info">
+
+    <h2>
+        Project Overview
+    </h2>
+
+    <p>
+        This dashboard presents Exploratory Data Analysis,
+        Regression, Classification, Tree Models, Boosting,
+        PCA and DBSCAN results from the placement dataset.
+    </p>
+
+</section>
+
+{% endblock %}

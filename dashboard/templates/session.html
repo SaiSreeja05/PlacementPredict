@@ -1,0 +1,386 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="page-title">
+    Complete Machine Learning Analysis
+</h1>
+
+
+<!-- ======================================================
+     REGRESSION
+======================================================= -->
+
+<section>
+
+<h2>
+    Regression Analysis
+</h2>
+
+<div class="info">
+
+    <p>
+        <b>Target:</b>
+        {{ regression.target }}
+    </p>
+
+    <p>
+        <b>Training samples:</b>
+        {{ regression.train_rows }}
+    </p>
+
+    <p>
+        <b>Testing samples:</b>
+        {{ regression.test_rows }}
+    </p>
+
+    <p>
+        <b>Features:</b>
+        {{ regression.features | join(", ") }}
+    </p>
+
+</div>
+
+
+<h3>
+    Regression Model Comparison
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Model</th>
+<th>MSE</th>
+<th>RMSE</th>
+<th>MAE</th>
+<th>R²</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+{% for row in regression.results %}
+
+<tr>
+
+<td>
+    {{ row.model }}
+</td>
+
+<td>
+    {{ row.mse }}
+</td>
+
+<td>
+    {{ row.rmse }}
+</td>
+
+<td>
+    {{ row.mae }}
+</td>
+
+<td>
+    {{ row.r2 }}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+
+<h3>
+    What the Regression Values Mean
+</h3>
+
+<div class="explanation">
+
+<p>
+<b>MSE:</b>
+Mean Squared Error. It calculates the average squared
+difference between actual salary and predicted salary.
+Lower MSE means smaller prediction errors.
+</p>
+
+<p>
+<b>RMSE:</b>
+Root Mean Squared Error. It is the square root of MSE
+and is expressed in the same unit as salary.
+</p>
+
+<p>
+<b>MAE:</b>
+Mean Absolute Error. It gives the average absolute
+difference between actual and predicted salary.
+</p>
+
+<p>
+<b>R²:</b>
+Coefficient of determination. It indicates how much
+of the variation in salary is explained by the model.
+</p>
+
+</div>
+
+
+<h3>
+    Regression Coefficients
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Model</th>
+<th>Feature</th>
+<th>Coefficient</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for row in regression.coefficients %}
+
+<tr>
+
+<td>
+    {{ row.model }}
+</td>
+
+<td>
+    {{ row.feature }}
+</td>
+
+<td>
+    {{ row.coefficient }}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+
+<div class="formula">
+
+<h3>
+    Linear Regression Calculation
+</h3>
+
+<p>
+
+Salary =
+Intercept +
+
+Coefficient × Feature
+
+</p>
+
+<p>
+
+The coefficient tells how the predicted salary changes
+when the corresponding feature changes while the other
+features remain fixed.
+
+</p>
+
+</div>
+
+
+<!-- ======================================================
+     REGRESSION PLOTS
+======================================================= -->
+
+<div class="plot-grid">
+
+{% set regression_plots = [
+
+    (
+        "Output/plot/linear_regression_actual_vs_predicted.png",
+        "Actual vs Predicted Salary"
+    ),
+
+    (
+        "Output/plot/linear_regression_residual_histogram.png",
+        "Residual Histogram"
+    )
+
+] %}
+
+
+{% for path, title in regression_plots %}
+
+{% set full_path = config.root_path %}
+
+
+<div class="plot-card">
+
+    <h3>
+        {{ title }}
+    </h3>
+
+    <img
+        src="/files/{{ path }}"
+        alt="{{ title }}"
+    >
+
+</div>
+
+{% endfor %}
+
+</div>
+
+
+<!-- ======================================================
+     EDA
+======================================================= -->
+
+<section>
+
+<h2>
+    Exploratory Data Analysis
+</h2>
+
+<div class="plot-grid">
+
+{% for plot in eda_plots %}
+
+<div class="plot-card">
+
+<h3>
+    {{ plot.title }}
+</h3>
+
+<img
+    src="{{ plot.path }}"
+    alt="{{ plot.title }}"
+>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     TREE AND BOOSTING MODELS
+======================================================= -->
+
+<section>
+
+<h2>
+    Tree and Boosting Models
+</h2>
+
+<div class="plot-grid">
+
+{% for plot in model_plots %}
+
+<div class="plot-card">
+
+<h3>
+    {{ plot.title }}
+</h3>
+
+<img
+    src="{{ plot.path }}"
+    alt="{{ plot.title }}"
+>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     PCA
+======================================================= -->
+
+<section>
+
+<h2>
+    PCA Analysis
+</h2>
+
+<div class="plot-grid">
+
+{% for plot in pca_plots %}
+
+<div class="plot-card">
+
+<h3>
+    {{ plot.title }}
+</h3>
+
+<img
+    src="{{ plot.path }}"
+    alt="{{ plot.title }}"
+>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     DBSCAN
+======================================================= -->
+
+<section>
+
+<h2>
+    DBSCAN Clustering
+</h2>
+
+<div class="plot-grid">
+
+{% for plot in dbscan_plots %}
+
+<div class="plot-card">
+
+<h3>
+    {{ plot.title }}
+</h3>
+
+<img
+    src="{{ plot.path }}"
+    alt="{{ plot.title }}"
+>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</section>
+
+
+{% endblock %}
